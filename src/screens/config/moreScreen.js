@@ -1,6 +1,7 @@
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import WhiteIshBackground from "../../components/whiteIshBackground";
 import * as colors from "../../constants/colors";
+import * as screens from "../../constants/screens";
 import { useAtom } from "jotai";
 import {
   emailAtom,
@@ -16,6 +17,7 @@ import {
   UserIconSVG,
 } from "../../constants/svgs";
 import { useMemo } from "react";
+import { useNavigation } from "@react-navigation/native";
 
 export default function MoreScreen() {
   const [, setIsLoggedIn] = useAtom(isLoggedInAtom);
@@ -49,8 +51,10 @@ export default function MoreScreen() {
           height={100}
         />
       </View>
+
       <Text style={styles.userTitle}>Olá, {firstNames}!</Text>
       <Text style={styles.userEmail}>{email}</Text>
+
       <TouchableOpacity style={styles.option}>
         <View style={styles.optionTextIcon}>
           <UserIconSVG
@@ -62,7 +66,14 @@ export default function MoreScreen() {
         </View>
         <ArrowSVG color={colors.BACKGROUND_YELLOW} width={50} height={50} />
       </TouchableOpacity>
-      <TouchableOpacity style={styles.option}>
+
+      <TouchableOpacity 
+      style={styles.option}
+      onPress={() => {
+        console.log('Clicou em Configurações');
+        navigation.navigate(screen.SETTINGS_SCREEN);
+      }}
+      >
         <View style={styles.optionTextIcon}>
           <GearSVG color={colors.BACKGROUND_YELLOW} width={50} height={50} />
           <Text style={styles.optionText}>Configurações</Text>

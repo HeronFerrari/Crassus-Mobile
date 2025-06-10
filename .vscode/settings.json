@@ -1,10 +1,9 @@
 {
-  "explorer.compactFolders": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "always",
-    "source.fixAll.ts": "always"
-  },
-  "editor.tabSize": 2,
-  "editor.maxTokenizationLineLength": 20000,
-  "git.ignoreLimitWarning": true
+    "explorer.compactFolders": false,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "always",
+        "source.fixAll.ts": "always",
+    },
+    "editor.tabSize": 2,
+    "editor.maxTokenizationLineLength": 20000
 }

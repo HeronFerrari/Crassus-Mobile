@@ -7,7 +7,7 @@ const Stack = createNativeStackNavigator();
 export default function MoreStack() {
   return (
     <Stack.Navigator screenOptions={{ headerShown: false }}>
-      <Stack.Screen name={screens.MORE} component={MoreScreen} />
+      <Stack.Screen name={screens.MORE_SCREEN} component={MoreScreen}/>
     </Stack.Navigator>
   );
 }
