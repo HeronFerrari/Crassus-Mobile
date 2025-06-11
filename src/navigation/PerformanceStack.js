@@ -1,7 +1,7 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import PerformanceScreen from "../screens/performance";
 import * as screens from "../constants/screens";
-import MoreScreen from "../screens/config/moreScreen";
+import MoreScreen from "../screens/config/MoreScreen";
 
 const Stack = createNativeStackNavigator();
 

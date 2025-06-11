@@ -20,6 +20,7 @@ import { useMemo } from "react";
 import { useNavigation } from "@react-navigation/native";
 
 export default function MoreScreen() {
+  const navigation = useNavigation();
   const [, setIsLoggedIn] = useAtom(isLoggedInAtom);
   const [, setId] = useAtom(idAtom);
   const [name, setName] = useAtom(nameAtom);
@@ -71,7 +72,7 @@ export default function MoreScreen() {
       style={styles.option}
       onPress={() => {
         console.log('Clicou em Configurações');
-        navigation.navigate(screen.SETTINGS_SCREEN);
+        navigation.navigate(screens.SETTINGS_SCREEN);
       }}
       >
         <View style={styles.optionTextIcon}>
@@ -80,6 +81,7 @@ export default function MoreScreen() {
         </View>
         <ArrowSVG color={colors.BACKGROUND_YELLOW} width={50} height={50} />
       </TouchableOpacity>
+
       <TouchableOpacity style={styles.option} onPress={handleDisconnect}>
         <View style={styles.optionTextIcon}>
           <DisconnectIconSVG
@@ -91,6 +93,7 @@ export default function MoreScreen() {
         </View>
         <ArrowSVG color={colors.BACKGROUND_YELLOW} width={50} height={50} />
       </TouchableOpacity>
+      
     </WhiteIshBackground>
   );
 }

@@ -15,7 +15,7 @@ import NutritionIcon from "../../assets/icons/nutritionIcon";
 import RunIcon from "../../assets/icons/runIcon";
 
 // Settings screen
-import SettingsScreen from "./SettingsScreen";
+import SettingsScreen from "../screens/config/SettingsScreen";
 import { Ionicons } from '@expo/vector-icons';
 
 const Tab = createBottomTabNavigator();
@@ -40,6 +40,7 @@ export default function MainTabs() {
         name={screens.PERFORMANCE_TAB}
         component={PerformanceStack}
         options={{
+          tabBarLabel: "Performance", 
           tabBarIcon: ({ color, size }) => (
             <PerformanceIcon color={color} size={size} />
           ),
@@ -48,9 +49,10 @@ export default function MainTabs() {
 
       {/* Nutrição */}
       <Tab.Screen
-        name={screens.NUTRITION}
+        name={screens.NUTRITION_TAB}
         component={MealsStack}
         options={{
+          tabBarLabel: "Nutrition",
           tabBarIcon: ({ color, size }) => (
             <NutritionIcon color={color} size={size} />
           ),
@@ -72,18 +74,9 @@ export default function MainTabs() {
         name={screens.MORE_TAB}
         component={MoreStack}
         options={{
+          tabBarLabel: "More",
           tabBarIcon: ({ color, size }) => (
             <MoreIcon color={color} size={size} />
-          ),
-        }}
-      />
-      {/* Configurações */}
-      <Tab.Screen
-        name={screens.SETTINGS_SCREEN}
-        component={SettingsScreen}
-        options={{
-          tabBarIcon: ({ color, size }) => (
-            <Ionicons name="settings-outline" color={color} size={size} />
           ),
         }}
       />

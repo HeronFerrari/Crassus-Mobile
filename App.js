@@ -15,6 +15,8 @@ import Spinner from "react-native-loading-spinner-overlay";
 import Toast, { BaseToast, ErrorToast } from "react-native-toast-message";
 import Icon from "react-native-vector-icons/Feather";
 
+import { ThemeProvider } from "./src/context/ThemeContext";
+
 const toastConfig = {
   success: (props) => (
     <BaseToast
@@ -75,6 +77,7 @@ export default function App() {
   if (!fontsLoaded) return null;
 
   return (
+    <ThemeProvider>
     <View style={styles.mainView}>
       <AppNavigator />
       <Spinner
@@ -86,6 +89,7 @@ export default function App() {
       />
       <Toast config={toastConfig} />
     </View>
+    </ThemeProvider>
   );
 }
 
